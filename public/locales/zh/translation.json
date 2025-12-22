@@ -3,5 +3,20 @@
     "name": "领地助手",
     "Theme": "主题列表"
   },
+  "sidebar": {
+    "docs": "文档",
+    "introduction": "介绍",
+    "install": "Steam商店",
+    "cdn": "Mod安装方式",
+    "editor_setup": "B站Wiki",
+    "components": "Mod开发教程",
+    "actions": "交互",
+    "button": "按钮",
+    "dropdown": "下拉菜单",
+    "modal": "模态框",
+    "data_display": "数据展示",
+    "accordion": "手风琴",
+    "avatar": "头像"
+  },
   "language": "简体中文"
 }
