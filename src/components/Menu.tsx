@@ -1,5 +1,5 @@
 import React from 'react';
-import {BookOpenIcon} from "@heroicons/react/24/outline";
+import {TrophyIcon} from "@heroicons/react/24/outline";
 
 // 定义菜单项的类型
 export type MenuItem = {
@@ -17,7 +17,7 @@ export type MenuItem = {
 export const sidebarMenu: MenuItem[] = [
     {
         key: 'introduction', // 对应翻译文件中的 key
-        icon: <BookOpenIcon className="w-5 h-5" />,
+        icon: <TrophyIcon className="w-5 h-5" />,
         children: [
             { key: 'intro', path: '/intro/md' },
             { key: 'shop', path: '/intro/shop' },

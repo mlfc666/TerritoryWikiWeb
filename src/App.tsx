@@ -4,7 +4,10 @@ import {Navbar} from "./components/Navbar.tsx";
 import {useTranslation} from "react-i18next";
 import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
 import Sidebar from "./components/Sidebar.tsx";
-import {IntroductionPage} from "./pages/intro/Introduction.tsx";
+import {IntroPage} from "./pages/intro/intro.tsx";
+import {ShopPage} from "./pages/intro/shop.tsx";
+import {ModPage} from "./pages/intro/mod.tsx";
+import {OtherPage} from "./pages/intro/other.tsx";
 
 const MainLayout = () => {
     return (
@@ -56,13 +59,10 @@ function App() {
                     <Route path="/" element={<MainLayout/>}>
                         {/* 子路由：会显示在 MainLayout 的 Outlet 位置 */}
                         {/*<Route index element={<IntroductionPage />} />*/}
-                        <Route path="intro/md" element={<IntroductionPage />} />
-                        {/*<Route path="news" element={<NewsPage />} />*/}
-                        {/*<Route path="people" element={<PeoplePage />} />*/}
-                        {/*<Route path="projects" element={<ProjectsPage />} />*/}
-                        {/*<Route path="publications" element={<PublicationsPage />} />*/}
-                        {/*<Route path="resources" element={<ResourcesPage />} />*/}
-                        {/*<Route path="contact" element={<ContactPage />} />*/}
+                        <Route path="intro/md" element={<IntroPage />} />
+                        <Route path="intro/shop" element={<ShopPage />} />
+                        <Route path="intro/mod" element={<ModPage />} />
+                        <Route path="intro/other" element={<OtherPage />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
