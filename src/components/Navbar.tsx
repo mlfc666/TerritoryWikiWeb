@@ -3,7 +3,7 @@ import Logo from '../assets/logo.webp'
 import {setTheme, type ThemeInfo, themeOptions} from "../manager/ThemeManger.ts";
 import {type LanguageInfo, languageOptions} from "../manager/i18n.ts";
 import type {i18n} from "i18next";
-import SvgIcon from "../icons/SvgIcon.tsx";
+import {LanguageIcon, SparklesIcon} from "@heroicons/react/24/outline";
 
 // 合并后的参数类型（包含 i18n）
 interface LanguageChoiceProps extends LanguageInfo {
@@ -68,7 +68,7 @@ export function Navbar() {
                 {/*切换语言的按钮*/}
                 <div className="dropdown dropdown-end">
                     <button className="btn btn-ghost">
-                        <SvgIcon name="theme"/>
+                        <SparklesIcon className={"w-6 h-6"}/>
                         {t("navbar.Theme")}
                     </button>
                     <ul className="dropdown-content menu bg-base-200 rounded-box z-1 w-52 p-2 shadow-2xl">
@@ -84,7 +84,7 @@ export function Navbar() {
                 {/*切换主题的按钮*/}
                 <div className="dropdown dropdown-end">
                     <button className="btn btn-ghost">
-                        <SvgIcon name="language"/>
+                        <LanguageIcon className={"w-6 h-6"}/>
                         {t("language")}
                     </button>
                     <ul className="dropdown-content menu bg-base-200 rounded-box z-1 w-52 p-2 shadow-2xl">

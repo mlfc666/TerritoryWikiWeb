@@ -27,7 +27,7 @@ export default function Sidebar() {
                             {item.icon && item.icon}
                             {t(`sidebar.${item.key}`)}
                         </summary>
-                        <ul>
+                        <ul className="gap-1 mt-1">
                             {item.children.map(renderMenuItem)}
                         </ul>
                     </details>
@@ -58,7 +58,7 @@ export default function Sidebar() {
 
     // --- 主渲染 ---
     return (
-        <ul className="menu w-full p-0 px-4 mt-4">
+        <ul className="menu w-full p-0 px-4 mt-4 gap-2">
             {sidebarMenu.map(renderMenuItem)}
         </ul>
     );
