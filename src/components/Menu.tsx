@@ -1,5 +1,5 @@
 import React from 'react';
-import {BookOpenIcon, CubeTransparentIcon} from "@heroicons/react/24/outline";
+import {BookOpenIcon} from "@heroicons/react/24/outline";
 
 // 定义菜单项的类型
 export type MenuItem = {
@@ -16,37 +16,16 @@ export type MenuItem = {
 // 具体的菜单数据配置
 export const sidebarMenu: MenuItem[] = [
     {
-        key: 'docs', // 对应翻译文件中的 key
+        key: 'introduction', // 对应翻译文件中的 key
         icon: <BookOpenIcon className="w-5 h-5" />,
         children: [
-            { key: 'introduction', path: '/docs/introduction' },
-            { key: 'install', path: '/docs/install' },
-            { key: 'cdn', path: '/docs/cdn' },
+            { key: 'intro', path: '/intro/md' },
+            { key: 'shop', path: '/intro/shop' },
+            { key: 'mod', path: '/intro/mod' },
             {
-                key: 'editor_setup',
-                path: '/docs/setup',
-                badge: { text: 'updated', color: 'badge-info' }
-            },
-        ],
-    },
-    {
-        key: 'components',
-        icon: <CubeTransparentIcon className="w-5 h-5" />,
-        children: [
-            {
-                key: 'actions',
-                children: [ // 三级嵌套
-                    { key: 'button', path: '/components/actions/button' },
-                    { key: 'dropdown', path: '/components/actions/dropdown' },
-                    { key: 'modal', path: '/components/actions/modal' },
-                ],
-            },
-            {
-                key: 'data_display',
-                children: [
-                    { key: 'accordion', path: '/components/data-display/accordion' },
-                    { key: 'avatar', path: '/components/data-display/avatar' },
-                ],
+                key: 'other',
+                path: '/intro/other',
+                badge: { text: 'incoming', color: 'badge-info' }
             },
         ],
     },

@@ -4,7 +4,7 @@ import {Navbar} from "./components/Navbar.tsx";
 import {useTranslation} from "react-i18next";
 import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
 import Sidebar from "./components/Sidebar.tsx";
-import {IntroductionPage} from "./pages/introduction/Introduction.tsx";
+import {IntroductionPage} from "./pages/intro/Introduction.tsx";
 
 const MainLayout = () => {
     return (
@@ -56,7 +56,7 @@ function App() {
                     <Route path="/" element={<MainLayout/>}>
                         {/* 子路由：会显示在 MainLayout 的 Outlet 位置 */}
                         {/*<Route index element={<IntroductionPage />} />*/}
-                        <Route path="/docs/introduction" element={<IntroductionPage />} />
+                        <Route path="intro/md" element={<IntroductionPage />} />
                         {/*<Route path="news" element={<NewsPage />} />*/}
                         {/*<Route path="people" element={<PeoplePage />} />*/}
                         {/*<Route path="projects" element={<ProjectsPage />} />*/}
