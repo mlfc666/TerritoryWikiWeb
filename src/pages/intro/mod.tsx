@@ -1,4 +1,4 @@
-export function ModPage() {
+function ModPage() {
     return (
         <div>
             <div className="container mx-auto p-4">
@@ -8,3 +8,4 @@ export function ModPage() {
         </div>
     );
 }
+export default ModPage;

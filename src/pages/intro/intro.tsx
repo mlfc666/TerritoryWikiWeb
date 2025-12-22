@@ -1,4 +1,4 @@
-export function IntroPage() {
+function IntroPage() {
     return (
         <div>
             <div className="container mx-auto p-4">
@@ -8,3 +8,4 @@ export function IntroPage() {
         </div>
     );
 }
+export default IntroPage;

@@ -4,11 +4,25 @@
     "Theme": "主题列表"
   },
   "sidebar": {
-    "introduction": "介绍",
-    "intro": "游戏介绍",
-    "shop": "Steam商店",
-    "mod": "游戏Mod",
-    "other": "其他网站"
+    "intro": {
+      "main": "指南",
+      "md": "游戏介绍",
+      "shop": "Steam商店",
+      "mod": "Mod使用教程",
+      "other": "其他网站"
+    },
+    "docs": {
+      "main": "文档中心",
+      "struct": {
+        "main": "建筑结构",
+        "building": "建筑物",
+        "box": "箱子",
+        "altar": "祭坛",
+        "lair": "巢穴",
+        "statue": "雕像"
+      }
+    },
+    "website": "网站介绍"
   },
   "language": "简体中文"
 }

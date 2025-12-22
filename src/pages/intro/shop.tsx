@@ -1,4 +1,4 @@
-export function ShopPage() {
+function ShopPage() {
     return (
         <div>
             <div className="container mx-auto p-4">
@@ -8,3 +8,4 @@ export function ShopPage() {
         </div>
     );
 }
+export default ShopPage;

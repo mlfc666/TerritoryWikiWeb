@@ -1,4 +1,4 @@
-export function OtherPage() {
+function OtherPage() {
     return (
         <div>
             <div className="container mx-auto p-4">
@@ -8,3 +8,4 @@ export function OtherPage() {
         </div>
     );
 }
+export default OtherPage;

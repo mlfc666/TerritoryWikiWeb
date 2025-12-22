@@ -1,32 +1,57 @@
-import React from 'react';
-import {TrophyIcon} from "@heroicons/react/24/outline";
+// src/config/Menu.tsx
+import React, {lazy} from 'react';
+import {AtSymbolIcon, BookOpenIcon, TrophyIcon} from "@heroicons/react/24/outline";
 
-// 定义菜单项的类型
+const IntroPage = lazy(() => import('../pages/intro/intro'));
+const ModPage = lazy(() => import('../pages/intro/mod'));
+const ShopPage = lazy(() => import('../pages/intro/shop'));
+const OtherPage = lazy(() => import('../pages/intro/other'));
 export type MenuItem = {
-    key: string;       // 唯一标识，也可以用作翻译的 key (例如 'sidebar.docs')
-    path?: string;     // 路由路径 (如果有子菜单，这个通常可以不填)
-    icon?: React.ReactNode; // 图标 (可选)
-    children?: MenuItem[];  // 子菜单 (支持无限嵌套)
-    badge?: {          // 右侧的小徽章 (可选)
+    key: string;            // 这里的 key 将作为路径的一部分，也是翻译 key 的一部分
+    path?: string;          // 可选：如果填了，就强制使用这个路径；不填则自动生成
+    element?: React.ReactNode; // 该路由对应的页面组件
+    icon?: React.ReactNode;
+    children?: MenuItem[];
+    badge?: {
         text: string;
-        color: string; // 比如 'badge-info', 'badge-ghost'
+        color: string;
     };
 };
 
-// 具体的菜单数据配置
 export const sidebarMenu: MenuItem[] = [
     {
-        key: 'introduction', // 对应翻译文件中的 key
-        icon: <TrophyIcon className="w-5 h-5" />,
+        key: 'intro',
+        icon: <TrophyIcon className="w-5 h-5"/>,
         children: [
-            { key: 'intro', path: '/intro/md' },
-            { key: 'shop', path: '/intro/shop' },
-            { key: 'mod', path: '/intro/mod' },
+            {key: 'md', element: <IntroPage/>},
+            {key: 'shop', element: <ShopPage/>},
+            {key: 'mod', element: <ModPage/>},
             {
                 key: 'other',
-                path: '/intro/other',
-                badge: { text: 'incoming', color: 'badge-info' }
+                badge: {text: 'incoming', color: 'badge-info'},
+                element: <OtherPage/>
             },
         ],
+    },
+    {
+        key: 'docs',
+        icon: <BookOpenIcon className="w-5 h-5"/>,
+        children: [
+            {
+                key: 'struct',
+                children: [
+                    {key: 'building'},
+                    {key: 'box'},
+                    {key: 'altar'},
+                    {key: 'lair'},
+                    {key: 'statue'},
+                ]
+            },
+        ],
+    },
+    {
+        key: 'website',
+        icon: <AtSymbolIcon className="w-5 h-5"/>,
+        path: '/website',
     },
 ];

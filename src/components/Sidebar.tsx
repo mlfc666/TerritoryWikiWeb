@@ -6,50 +6,59 @@ export default function Sidebar() {
     const { t } = useTranslation();
     const location = useLocation();
 
-    // 辅助函数：判断父菜单是否应该展开
-    const shouldOpen = (item: MenuItem): boolean => {
-        if (!item.children) return false;
-        return item.children.some(child => {
-            if (child.path && location.pathname.startsWith(child.path)) return true;
-            if (child.children) return shouldOpen(child);
-            return false;
-        });
-    };
-
     // --- 递归渲染器 ---
-    const renderMenuItem = (item: MenuItem) => {
-        // 父级菜单
+    const renderMenuItem = (item: MenuItem, basePath: string = '', baseKey: string = 'sidebar') => {
+
+        // 计算路径和 Key
+        const fullPath = item.path || `${basePath}/${item.key}`.replace(/\/+/g, '/');
+        const currentTransKey = `${baseKey}.${item.key}`;
+
+        // 判断是否是顶级菜单（basePath 为空说明是第一层）
+        const isTopLevel = basePath === '';
+
+        // 如果是文件夹 (有子项)
         if (item.children && item.children.length > 0) {
+            // ... 保持原有代码不变 ...
             return (
                 <li key={item.key}>
-                    <details open={shouldOpen(item)}>
+                    <details open={location.pathname.startsWith(fullPath)}>
+                        {/* summary 默认就有 font-bold */}
                         <summary className="font-bold">
                             {item.icon && item.icon}
-                            {t(`sidebar.${item.key}`)}
+                            {t(`${currentTransKey}.main`)}
                         </summary>
                         <ul className="gap-1 mt-1">
-                            {item.children.map(renderMenuItem)}
+                            {item.children.map(child => renderMenuItem(child, fullPath, currentTransKey))}
                         </ul>
                     </details>
                 </li>
             );
         }
 
-        // 子菜单链接
+        // 如果是普通菜单项 (无子项)
         return (
             <li key={item.key}>
                 <NavLink
-                    to={item.path || '#'}
-                    // 如果你想让子菜单文字也稍微大一点，这里不需要加额外的类，默认继承即可
-                    className={({ isActive }) => isActive ? "menu-active" : ""}
+                    to={fullPath}
+                    className={({ isActive }) => {
+                        // 基础样式
+                        let classes = isActive ? "menu-active" : "";
+
+                        // 【关键修改】如果是顶级菜单，强制加粗，保持和 summary 一致
+                        if (isTopLevel) {
+                            classes += " font-bold";
+                        }
+
+                        return classes;
+                    }}
                 >
                     {item.icon && item.icon}
-                    {t(`sidebar.${item.key}`)}
+                    {t(currentTransKey)}
 
                     {item.badge && (
                         <span className={`badge badge-xs ${item.badge.color}`}>
-                            {item.badge.text}
-                        </span>
+                        {item.badge.text}
+                    </span>
                     )}
                 </NavLink>
             </li>
@@ -59,7 +68,8 @@ export default function Sidebar() {
     // --- 主渲染 ---
     return (
         <ul className="menu w-full p-0 px-4 mt-4 gap-2">
-            {sidebarMenu.map(renderMenuItem)}
+            {/* 初始调用：basePath 为空字符串，baseKey 为 'sidebar' */}
+            {sidebarMenu.map(item => renderMenuItem(item, '', 'sidebar'))}
         </ul>
     );
 }
