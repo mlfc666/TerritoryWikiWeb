@@ -8,7 +8,6 @@
       "main": "指南",
       "md": "游戏介绍",
       "shop": "Steam商店",
-      "mod": "Mod使用教程",
       "other": "其他网站"
     },
     "docs": {
@@ -20,6 +19,25 @@
         "altar": "祭坛",
         "lair": "巢穴",
         "statue": "雕像"
+      }
+    },
+    "mods": {
+      "main": "Mod教程",
+      "install": {
+        "main": "使用教程",
+        "frame": "下载解压框架",
+        "download": "下载Mod",
+        "path": "添加启用Mod"
+      },
+      "develop": {
+        "main": "开发教程",
+        "frame": "下载解压框架",
+        "vs": "Visual Studio开发",
+        "project": "创建新工程",
+        "refer": "添加DLL引用",
+        "value": "修改游戏变量",
+        "patch": "补丁游戏函数",
+        "inject": "添加游戏数据"
       }
     },
     "website": "网站介绍"

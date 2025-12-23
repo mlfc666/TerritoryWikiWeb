@@ -1,9 +1,8 @@
 // src/config/Menu.tsx
 import React, {lazy} from 'react';
-import {AtSymbolIcon, BookOpenIcon, TrophyIcon} from "@heroicons/react/24/outline";
+import {AtSymbolIcon, BookOpenIcon, FireIcon, TrophyIcon} from "@heroicons/react/24/outline";
 
 const IntroPage = lazy(() => import('../pages/intro/intro'));
-const ModPage = lazy(() => import('../pages/intro/mod'));
 const ShopPage = lazy(() => import('../pages/intro/shop'));
 const OtherPage = lazy(() => import('../pages/intro/other'));
 export type MenuItem = {
@@ -25,12 +24,63 @@ export const sidebarMenu: MenuItem[] = [
         children: [
             {key: 'md', element: <IntroPage/>},
             {key: 'shop', element: <ShopPage/>},
-            {key: 'mod', element: <ModPage/>},
             {
                 key: 'other',
                 badge: {text: 'incoming', color: 'badge-info'},
                 element: <OtherPage/>
             },
+        ],
+    },
+    {
+        key: 'mods',
+        icon: <FireIcon className="w-5 h-5"/>,
+        children: [
+            {
+                key: 'install',
+                children: [
+                    {key: 'frame'},
+                    {key: 'download'},
+                    {key: 'path'}
+                ]
+            },
+            {
+                key: 'develop',
+                children: [
+                    {key: 'frame'},
+                    {key: 'vs'},
+                    {key: 'project'},
+                    {key: 'refer'},
+                    {key: 'value'},
+                    {key: 'patch'},
+                    {key: 'inject'},
+                ]
+            }
+        ],
+    },
+    {
+        key: 'mods',
+        icon: <FireIcon className="w-5 h-5"/>,
+        children: [
+            {
+                key: 'install',
+                children: [
+                    {key: 'frame'},
+                    {key: 'download'},
+                    {key: 'path'}
+                ]
+            },
+            {
+                key: 'develop',
+                children: [
+                    {key: 'frame'},
+                    {key: 'vs'},
+                    {key: 'project'},
+                    {key: 'refer'},
+                    {key: 'value'},
+                    {key: 'patch'},
+                    {key: 'inject'},
+                ]
+            }
         ],
     },
     {

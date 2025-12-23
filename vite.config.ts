@@ -8,4 +8,8 @@ export default defineConfig({
         // 配置：允许通过 ?react 后缀显式导入为组件（可选，但推荐）
         include: '**/*.svg',
     }),],
+    server: {
+        // 允许指定的 Host 访问
+        allowedHosts: ['dev.mlfc.moe']
+    }
 })
