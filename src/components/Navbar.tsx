@@ -1,5 +1,4 @@
 import {useTranslation} from "react-i18next";
-import Logo from '../assets/logo.webp'
 import {setTheme, type ThemeInfo, themeOptions} from "../manager/ThemeManger.ts";
 import {type LanguageInfo, languageOptions} from "../manager/i18n.ts";
 import type {i18n} from "i18next";
@@ -53,7 +52,7 @@ export function Navbar() {
                 {/*Logo*/}
                 <div className="avatar ml-4 mr-2">
                     <div className="w-12  rounded-lg">
-                        <img src={Logo} alt={"Logo"}/>
+                        <img src="/logo.webp" alt={"Logo"}/>
                     </div>
                 </div>
                 {/*团队名称*/}

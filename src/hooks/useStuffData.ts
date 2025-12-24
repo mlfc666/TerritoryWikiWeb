@@ -1,46 +1,25 @@
-import { useState, useEffect } from 'react';
-import type { StuffData } from "../types/StuffData.ts";
+import {useState, useEffect} from 'react';
+import {type DataSource, DATA_SOURCES} from "../config/DataSourceConfig";
+import type {StuffData} from "../types/StuffData";
+import {dataManager} from "../manager/DataManger.ts";
 
-// 内存缓存变量
-let cachedStuffData: StuffData[] | null = null;
-
-export const useStuffData = () => {
-    const [data, setData] = useState<StuffData[]>([]);
+// 通用 Hook
+export function useDataSource<T>(source: DataSource<T>) {
+    const [data, setData] = useState<T[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const loadData = async () => {
-            // 优先使用缓存数据
-            if (cachedStuffData) {
-                setData(cachedStuffData);
-                setLoading(false);
-                return;
-            }
+        dataManager.loadData(source).then(result => {
+            setData(result);
+            setLoading(false);
+        });
+    }, [source]); // source配置对象通常是静态的
 
-            try {
-                // 并行请求两个数据源
-                const [res1, res2] = await Promise.all([
-                    fetch('https://asset.territory.mlfc.moe/stuff'),
-                    fetch('https://asset.territory.mlfc.moe/stuff2')
-                ]);
-                const data1 = await res1.json();
-                const data2 = await res2.json();
+    return {data, loading};
+}
 
-                // 合并数据并过滤掉禁用项
-                const allItems = [...data1, ...data2].filter((item: StuffData) => item.disable === 0);
+// 专门给 Stuff 用的快捷 Hook
+export const useStuffData = () => useDataSource<StuffData>(DATA_SOURCES.STUFF);
 
-                // 写入缓存并更新状态
-                cachedStuffData = allItems;
-                setData(allItems);
-            } catch (error) {
-                console.error("Failed to fetch wiki data:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        void loadData();
-    }, []);
-
-    return { data, loading };
-};
+// 未来给 Build 用的快捷 Hook
+// export const useBuildData = () => useDataSource<BuildData>(DATA_SOURCES.BUILD);
