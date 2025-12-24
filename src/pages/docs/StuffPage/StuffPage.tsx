@@ -115,12 +115,12 @@ export default function StuffPage() {
                     // 上锁，防止重复触发
                     loadingLock.current = true;
 
-                    // 人为延迟 1000 毫秒 (1秒)
+                    // 人为延迟 500 毫秒 (0.5秒)
                     timer = window.setTimeout(() => {
                         setVisibleCount((prev) => prev + 24);
                         // 加载完成后开锁，允许下一次触发
                         loadingLock.current = false;
-                    }, 1000);
+                    }, 500);
                 }
             },
             {
