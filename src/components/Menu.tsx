@@ -1,6 +1,7 @@
 // src/config/Menu.tsx
 import React, {lazy} from 'react';
 import {AtSymbolIcon, BookOpenIcon, FireIcon, TrophyIcon} from "@heroicons/react/24/outline";
+import StuffPage from "../pages/docs/StuffPage/StuffPage.tsx";
 
 const IntroPage = lazy(() => import('../pages/intro/intro'));
 const ShopPage = lazy(() => import('../pages/intro/shop'));
@@ -58,35 +59,13 @@ export const sidebarMenu: MenuItem[] = [
         ],
     },
     {
-        key: 'mods',
-        icon: <FireIcon className="w-5 h-5"/>,
-        children: [
-            {
-                key: 'install',
-                children: [
-                    {key: 'frame'},
-                    {key: 'download'},
-                    {key: 'path'}
-                ]
-            },
-            {
-                key: 'develop',
-                children: [
-                    {key: 'frame'},
-                    {key: 'vs'},
-                    {key: 'project'},
-                    {key: 'refer'},
-                    {key: 'value'},
-                    {key: 'patch'},
-                    {key: 'inject'},
-                ]
-            }
-        ],
-    },
-    {
         key: 'docs',
         icon: <BookOpenIcon className="w-5 h-5"/>,
         children: [
+            {
+                key: 'stuff',
+                element: <StuffPage/>
+            },
             {
                 key: 'struct',
                 children: [

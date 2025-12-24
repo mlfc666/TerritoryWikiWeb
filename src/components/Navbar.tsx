@@ -50,7 +50,7 @@ export function Navbar() {
         <div className="navbar bg-base-100 shadow-sm">
             {/*导航条的开始部分*/}
             <div className="navbar-start">
-                {/*信息工程学院的Logo*/}
+                {/*Logo*/}
                 <div className="avatar ml-4 mr-2">
                     <div className="w-12  rounded-lg">
                         <img src={Logo} alt={"Logo"}/>

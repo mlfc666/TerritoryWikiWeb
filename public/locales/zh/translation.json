@@ -12,6 +12,7 @@
     },
     "docs": {
       "main": "文档中心",
+      "stuff": "物品图鉴",
       "struct": {
         "main": "建筑结构",
         "building": "建筑物",
@@ -42,5 +43,30 @@
     },
     "website": "网站介绍"
   },
-  "language": "简体中文"
+  "language": "简体中文",
+  "pages": {
+    "StuffPage": {
+        "stuff_title": "物品图鉴",
+        "search_placeholder": "搜索 ID 或 名称...",
+        "filter_all_types": "全部类型",
+        "filter_all_subtypes": "全部子类",
+        "detail": "详细属性",
+        "close": "关闭",
+        "id": "ID",
+        "category": "分类",
+        "price": "价格",
+        "weight": "重量",
+        "prefab": "Prefab名称",
+        "map_icon": "地图图标",
+        "ignore_summary": "统计中忽略",
+        "ant_carry": "蚂蚁搬运",
+        "incineration": "焚烧产物ID",
+        "spoilage": "腐烂年限",
+        "yes": "是",
+        "no": "否",
+        "none": "无",
+        "permanent": "永久"
+    }
+  },
+  "loading": "加载中..."
 }
