@@ -5,9 +5,9 @@ export const RESOURCE_CONFIG = {
     // 基础资源路径
     ASSET_BASE: "https://asset.territory.mlfc.moe",
     // 图片基础路径
-    IMAGE_BASE: "https://img.territory.mlfc.moe",
+    IMAGE_BASE: "https://res.territory.mlfc.moe",
     // 未知图片路径
-    UNKNOWN_IMAGE: "https://img.territory.mlfc.moe/unknown.webp",
+    UNKNOWN_IMAGE: "https://res.territory.mlfc.moe/unknown.webp",
     // 数据文件地址
     MAPPING_URL: "https://asset.territory.mlfc.moe/mapping",
     VERSION_URL: "https://asset.territory.mlfc.moe/version",

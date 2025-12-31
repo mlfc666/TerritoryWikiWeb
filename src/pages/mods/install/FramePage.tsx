@@ -1,7 +1,5 @@
-import MarkdownRender from "../../../components/MarkdownRender.tsx";
+import {RemoteMarkdownRender} from "../../../components/RemoteMarkdownRender.tsx";
 
 export default function FramePage() {
-    return (
-            <MarkdownRender content={""}/>
-    );
+    return <RemoteMarkdownRender fileName="DownloadFramework.md"/>;
 }
