@@ -59,7 +59,7 @@ export function Navbar() {
                 {/*下面这个样式的代码是必须的，不然会被吞样式*/}
                 <a
                     className={"btn btn-ghost text-left whitespace-pre-line text-xl"}>
-                    {t('navbar.name')}
+                    {t('components.navbar.name')}
                 </a>
             </div>
             {/*最右侧的一些按钮*/}
@@ -68,7 +68,7 @@ export function Navbar() {
                 <div className="dropdown dropdown-end">
                     <button className="btn btn-ghost">
                         <SparklesIcon className={"w-6 h-6"}/>
-                        {t("navbar.Theme")}
+                        {t("components.navbar.Theme")}
                     </button>
                     <ul className="dropdown-content menu bg-base-200 rounded-box z-1 w-52 p-2 shadow-2xl">
                         {themeOptions.map((theme) => (

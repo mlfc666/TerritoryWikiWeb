@@ -1,7 +1,83 @@
 {
-  "navbar": {
-    "name": "TerritoryWiki",
-    "Theme": "Theme"
+  "components": {
+    "navbar": {
+      "name": "Territory Assistant",
+      "Theme": "Theme List"
+    },
+    "CodeBlock": {
+      "toggle_theme": "Toggle Theme",
+      "copy": "Copy",
+      "copied": "Copied"
+    },
+    "RemoteMarkdown": {
+      "loading": "Loading document...",
+      "error": "Failed to load document"
+    }
   },
-  "language": "English"
+  "sidebar": {
+    "intro": {
+      "main": "Guide",
+      "md": "Game Introduction",
+      "shop": "Steam Store",
+      "other": "Other Websites"
+    },
+    "docs": {
+      "main": "Document Center",
+      "stuff": "Item Encyclopedia",
+      "struct": {
+        "main": "Building Structures",
+        "building": "Buildings",
+        "box": "Chests",
+        "altar": "Altars",
+        "lair": "Lairs",
+        "statue": "Statues"
+      }
+    },
+    "mods": {
+      "main": "Mod Tutorials",
+      "install": {
+        "main": "Usage Tutorial",
+        "frame": "Download & Extract Framework",
+        "download": "Download Mods",
+        "path": "Add & Enable Mods"
+      },
+      "develop": {
+        "main": "Development Tutorial",
+        "frame": "Download & Extract Framework",
+        "vs": "Visual Studio Development",
+        "project": "Create New Project",
+        "refer": "Add DLL References",
+        "value": "Modify Game Variables",
+        "patch": "Patch Game Functions",
+        "inject": "Inject Game Data"
+      }
+    },
+    "website": "Website Introduction"
+  },
+  "language": "English",
+  "pages": {
+    "StuffPage": {
+      "stuff_title": "Item Encyclopedia",
+      "search_placeholder": "Search ID or Name...",
+      "filter_all_types": "All Types",
+      "filter_all_subtypes": "All Subtypes",
+      "detail": "Detailed Attributes",
+      "close": "Close",
+      "id": "ID",
+      "category": "Category",
+      "price": "Price",
+      "weight": "Weight",
+      "prefab": "Prefab Name",
+      "map_icon": "Map Icon",
+      "ignore_summary": "Ignore in Statistics",
+      "ant_carry": "Ant Carriable",
+      "incineration": "Incineration Product ID",
+      "spoilage": "Spoilage Duration (Years)",
+      "yes": "Yes",
+      "no": "No",
+      "none": "None",
+      "permanent": "Permanent"
+    }
+  },
+  "loading": "Loading..."
 }

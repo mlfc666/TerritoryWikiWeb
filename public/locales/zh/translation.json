@@ -1,7 +1,18 @@
 {
-  "navbar": {
-    "name": "领地助手",
-    "Theme": "主题列表"
+  "components": {
+    "navbar": {
+      "name": "领地助手",
+      "Theme": "主题列表"
+    },
+    "CodeBlock": {
+      "toggle_theme": "切换主题",
+      "copy": "复制",
+      "copied": "已复制"
+    },
+    "RemoteMarkdown": {
+      "loading": "文档加载中...",
+      "error": "文档加载失败"
+    }
   },
   "sidebar": {
     "intro": {
@@ -41,7 +52,8 @@
         "inject": "添加游戏数据"
       }
     },
-    "website": "网站介绍"
+    "website": "网站介绍",
+    "md": "编写Markdown"
   },
   "language": "简体中文",
   "pages": {

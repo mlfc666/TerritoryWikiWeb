@@ -1,7 +1,9 @@
 // src/config/Menu.tsx
 import React, {lazy} from 'react';
-import {AtSymbolIcon, BookOpenIcon, FireIcon, TrophyIcon} from "@heroicons/react/24/outline";
+import {AcademicCapIcon, AtSymbolIcon, BookOpenIcon, FireIcon, TrophyIcon} from "@heroicons/react/24/outline";
 import StuffPage from "../pages/docs/StuffPage/StuffPage.tsx";
+import FramePage from "../pages/mods/install/FramePage.tsx";
+import MarkdownTuitionPage from "../pages/MarkdownTuitionPage.tsx";
 
 const IntroPage = lazy(() => import('../pages/intro/intro'));
 const ShopPage = lazy(() => import('../pages/intro/shop'));
@@ -39,7 +41,7 @@ export const sidebarMenu: MenuItem[] = [
             {
                 key: 'install',
                 children: [
-                    {key: 'frame'},
+                    {key: 'frame', element: <FramePage/>},
                     {key: 'download'},
                     {key: 'path'}
                 ]
@@ -82,5 +84,11 @@ export const sidebarMenu: MenuItem[] = [
         key: 'website',
         icon: <AtSymbolIcon className="w-5 h-5"/>,
         path: '/website',
+    },
+    {
+        key: 'md',
+        icon: <AcademicCapIcon className="w-5 h-5"/>,
+        path: '/md',
+        element: <MarkdownTuitionPage/>
     },
 ];

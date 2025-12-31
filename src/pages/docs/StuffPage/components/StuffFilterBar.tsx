@@ -14,47 +14,39 @@ interface FilterProps {
 }
 
 export const StuffFilterBar: React.FC<FilterProps> = ({
-                                                          t,
-                                                          searchTerm,
-                                                          onSearchChange,
-                                                          filterType,
-                                                          onTypeChange,
-                                                          filterSubType,
-                                                          onSubTypeChange,
-                                                          categoryTree,
-                                                          availableSubTypes
+                                                          t, searchTerm, onSearchChange, filterType, onTypeChange,
+                                                          filterSubType, onSubTypeChange, categoryTree, availableSubTypes
                                                       }) => (
-    <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-3xl font-bold">{t("pages.StuffPage.stuff_title")}</h1>
-        <div className="flex flex-col md:flex-row gap-2">
-            <input
-                type="text"
-                placeholder={t("pages.StuffPage.search_placeholder")}
-                className="input input-bordered w-full md:w-64"
-                value={searchTerm}
-                onChange={(e) => onSearchChange(e.target.value)}
-            />
-            <select
-                className="select select-bordered w-full md:w-48"
-                value={filterType}
-                onChange={onTypeChange}
-            >
-                <option value="all">{t("pages.StuffPage.filter_all_types")}</option>
-                {Array.from(categoryTree.entries()).map(([id, data]) => (
-                    <option key={id} value={id}>{data.name}</option>
-                ))}
-            </select>
-            <select
-                className="select select-bordered w-full md:w-48"
-                value={filterSubType}
-                onChange={(e) => onSubTypeChange(e.target.value === 'all' ? 'all' : Number(e.target.value))}
-                disabled={filterType === 'all'}
-            >
-                <option value="all">{t("pages.StuffPage.filter_all_subtypes")}</option>
-                {availableSubTypes.map((sub) => (
-                    <option key={sub.id} value={sub.id}>{sub.name}</option>
-                ))}
-            </select>
-        </div>
+    // 使用 flex 布局包裹，并在底部添加 mb-8 (32px) 来拉开与下方物品列表的距离
+    // flex-col md:flex-row: 移动端垂直排列，桌面端水平排列
+    <div className="flex flex-col md:flex-row gap-4 mb-8">
+        <input
+            type="text"
+            placeholder={t("pages.StuffPage.search_placeholder")}
+            className="input input-bordered w-full md:w-64"
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
+        />
+        <select
+            className="select select-bordered w-full md:w-48"
+            value={filterType}
+            onChange={onTypeChange}
+        >
+            <option value="all">{t("pages.StuffPage.filter_all_types")}</option>
+            {Array.from(categoryTree.entries()).map(([id, data]) => (
+                <option key={id} value={id}>{data.name}</option>
+            ))}
+        </select>
+        <select
+            className="select select-bordered w-full md:w-48"
+            value={filterSubType}
+            onChange={(e) => onSubTypeChange(e.target.value === 'all' ? 'all' : Number(e.target.value))}
+            disabled={filterType === 'all'}
+        >
+            <option value="all">{t("pages.StuffPage.filter_all_subtypes")}</option>
+            {availableSubTypes.map((sub) => (
+                <option key={sub.id} value={sub.id}>{sub.name}</option>
+            ))}
+        </select>
     </div>
 );

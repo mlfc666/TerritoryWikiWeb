@@ -11,7 +11,13 @@ export const RESOURCE_CONFIG = {
     // 数据文件地址
     MAPPING_URL: "https://asset.territory.mlfc.moe/mapping",
     VERSION_URL: "https://asset.territory.mlfc.moe/version",
+    // 新增：Markdown 文件基准路径
+    MD_BASE: "https://md.territory.mlfc.moe",
 };
+
+export function getQQImage(qq: string | number) {
+    return `https://q1.qlogo.cn/g?b=qq&nk=${qq}&s=100`;
+}
 
 // T = 最终要在 UI 使用的数据类型
 // TRaw = 从 JSON 下载下来的原始数据类型 (默认和 T 一样)
