@@ -1,4 +1,5 @@
 import type {StuffData} from "../types/StuffData";
+import type {TechInfo, TechNodeConfig} from "../types/TeckData.ts";
 
 // 资源映射表配置
 export const RESOURCE_CONFIG = {
@@ -39,7 +40,19 @@ export const DATA_SOURCES = {
             return rawList.filter((item: StuffData) => item.disable === 0);
         }
     } as DataSource<StuffData>,
+    // 科技描述
+    TECH_INFO: {
+        key: 'tech_info',
+        urls: [`${RESOURCE_CONFIG.ASSET_BASE}/tech`],
+        process: (rawList) => rawList
+    } as DataSource<TechInfo>,
 
+    // 科技树结构
+    TECH_TREE: {
+        key: 'tech_tree',
+        urls: [`${RESOURCE_CONFIG.ASSET_BASE}/tech_tree`],
+        process: (rawList) => rawList
+    } as DataSource<TechNodeConfig>,
     // 建筑数据配置
     /*
     BUILD: {

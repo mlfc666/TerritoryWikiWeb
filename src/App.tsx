@@ -4,12 +4,12 @@ import {Navbar} from "./components/Navbar.tsx";
 import {useTranslation} from "react-i18next";
 import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
 import Sidebar from "./components/Sidebar.tsx";
-import {type MenuItem, sidebarMenu} from "./components/Menu.tsx";
+import {type NavItem, navigation} from "./components/Navigation.tsx";
 import { PageContainer } from "./components/PageContainer.tsx";
 
 // --- 递归路由生成器 (核心修改) ---
 // 新增 baseKey 参数，用于递归传递翻译层级 (默认为 'sidebar')
-const renderRoutes = (items: MenuItem[], baseKey = 'sidebar') => {
+const renderRoutes = (items: NavItem[], baseKey = 'sidebar') => {
     return items.map((item) => {
         // 计算当前的翻译 Key (例如: sidebar.mods.install.frame)
         const currentTransKey = `${baseKey}.${item.key}`;
@@ -90,7 +90,7 @@ function App() {
                         }/>
 
                         {/* 自动生成的带 Layout 的路由 */}
-                        {renderRoutes(sidebarMenu)}
+                        {renderRoutes(navigation)}
 
                         <Route path="*" element={<div>404 Not Found</div>}/>
                     </Route>

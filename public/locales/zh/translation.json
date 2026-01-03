@@ -34,7 +34,8 @@
         "altar": "祭坛",
         "lair": "巢穴",
         "statue": "雕像"
-      }
+      },
+      "tech": "科技树"
     },
     "mods": {
       "main": "Mod教程",
@@ -81,6 +82,10 @@
         "no": "否",
         "none": "无",
         "permanent": "永久"
+    },
+    "TechTreePage": {
+      "mouse_drag":  "\uD83D\uDDB1\uFE0F 按住鼠标左键拖拽画面",
+      "tech_disabled": "该科技已禁用"
     }
   },
   "loading": "加载中..."

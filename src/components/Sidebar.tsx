@@ -1,13 +1,13 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { sidebarMenu, type MenuItem } from './Menu.tsx';
+import { navigation, type NavItem } from './Navigation.tsx';
 
 export default function Sidebar() {
     const { t } = useTranslation();
     const location = useLocation();
 
     // --- 递归渲染器 ---
-    const renderMenuItem = (item: MenuItem, basePath: string = '', baseKey: string = 'sidebar') => {
+    const renderMenuItem = (item: NavItem, basePath: string = '', baseKey: string = 'sidebar') => {
 
         // 计算路径和 Key
         const fullPath = item.path || `${basePath}/${item.key}`.replace(/\/+/g, '/');
@@ -69,7 +69,7 @@ export default function Sidebar() {
     return (
         <ul className="menu w-full p-0 px-4 mt-4 gap-2">
             {/* 初始调用：basePath 为空字符串，baseKey 为 'sidebar' */}
-            {sidebarMenu.map(item => renderMenuItem(item, '', 'sidebar'))}
+            {navigation.map(item => renderMenuItem(item, '', 'sidebar'))}
         </ul>
     );
 }
