@@ -65,7 +65,7 @@ export function Navbar() {
             {/*最右侧的一些按钮*/}
             <div className="navbar-end">
                 {/*切换语言的按钮*/}
-                <div className="dropdown dropdown-end">
+                <div className="dropdown dropdown-end z-[100]">
                     <button className="btn btn-ghost">
                         <SparklesIcon className={"w-6 h-6"}/>
                         {t("components.navbar.Theme")}
@@ -81,7 +81,7 @@ export function Navbar() {
                     </ul>
                 </div>
                 {/*切换主题的按钮*/}
-                <div className="dropdown dropdown-end">
+                <div className="dropdown dropdown-end z-[100]">
                     <button className="btn btn-ghost">
                         <LanguageIcon className={"w-6 h-6"}/>
                         {t("language")}
