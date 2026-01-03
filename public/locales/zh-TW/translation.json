@@ -1,0 +1,84 @@
+{
+  "components": {
+    "navbar": {
+      "name": "領地助手",
+      "Theme": "主題列表"
+    },
+    "CodeBlock": {
+      "toggle_theme": "切換主題",
+      "copy": "復制",
+      "copied": "已復制"
+    },
+    "RemoteMarkdown": {
+      "loading": "文檔加載中...",
+      "error": "文檔加載失敗"
+    }
+  },
+  "sidebar": {
+    "intro": {
+      "main": "指南",
+      "md": "遊戲介紹",
+      "shop": "Steam商店",
+      "other": "其他網站"
+    },
+    "docs": {
+      "main": "文檔中心",
+      "stuff": "物品圖鑑",
+      "struct": {
+        "main": "建築結構",
+        "building": "建築物",
+        "box": "箱子",
+        "altar": "祭壇",
+        "lair": "巢穴",
+        "statue": "雕像"
+      }
+    },
+    "mods": {
+      "main": "Mod教程",
+      "install": {
+        "main": "使用教程",
+        "frame": "下載解壓框架",
+        "download": "下載Mod",
+        "path": "添加啓用Mod"
+      },
+      "develop": {
+        "main": "開發教程",
+        "frame": "下載解壓框架",
+        "vs": "Visual Studio開發",
+        "project": "創建新工程",
+        "refer": "添加DLL引用",
+        "value": "修改遊戲變量",
+        "patch": "補丁遊戲函數",
+        "inject": "添加遊戲數據"
+      }
+    },
+    "website": "網站介紹",
+    "md": "編寫Markdown"
+  },
+  "language": "繁體中文",
+  "pages": {
+    "StuffPage": {
+      "stuff_title": "物品圖鑑",
+      "search_placeholder": "搜索 ID 或 名稱...",
+      "filter_all_types": "全部類型",
+      "filter_all_subtypes": "全部子類",
+      "detail": "詳細屬性",
+      "close": "關閉",
+      "id": "ID",
+      "category": "分類",
+      "price": "價格",
+      "weight": "重量",
+      "prefab": "Prefab名稱",
+      "map_icon": "地圖圖標",
+      "ignore_summary": "統計中忽略",
+      "ant_carry": "螞蟻搬運",
+      "incineration": "焚燒產物ID",
+      "spoilage": "腐爛年限",
+      "yes": "是",
+      "no": "否",
+      "none": "無",
+      "permanent": "永久"
+    }
+  },
+  "loading": "加載中..."
+}

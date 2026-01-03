@@ -14,6 +14,7 @@ export interface LanguageInfo {
 export const languageOptions: LanguageInfo[] = [
     {label: "English", language: "en"},
     {label: "简体中文", language: "zh"},
+    {label: "繁體中文", language: "zh-TW"},
 ];
 // 初始化i18n
 i18n
@@ -25,7 +26,7 @@ i18n
     .use(initReactI18next)
     // 配置核心参数
     .init({
-        fallbackLng: 'en', // 当检测不到语言时的默认语言
+        fallbackLng: 'zh', // 当检测不到语言时的默认语言
         interpolation: {
             escapeValue: false, // React已经处理了XSS，不需要额外转义
         },
