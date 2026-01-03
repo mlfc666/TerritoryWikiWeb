@@ -37,7 +37,7 @@ export const TechCard: React.FC<TechCardProps> = ({node}) => {
         >
             <div
                 className={`
-                    card w-48 shadow-sm border transition-all cursor-pointer overflow-hidden relative group
+                    card w-40 shadow-sm border transition-all cursor-pointer overflow-hidden relative group rounded-xl
                     ${/* 禁用状态样式 */ isDisabled
                     ? 'bg-base-200 border-base-200 grayscale opacity-60 cursor-not-allowed'
                     : isLocked
@@ -49,7 +49,7 @@ export const TechCard: React.FC<TechCardProps> = ({node}) => {
 
                 {/* ID 浮标 */}
                 <div
-                    className="absolute top-0 left-0 px-1.5 py-0.5 bg-base-100/90 rounded-br text-[9px] text-base-content/40 font-mono font-bold select-none z-20 border-b border-r border-base-200 backdrop-blur-sm">
+                    className="absolute top-0 left-0 px-1.5 py-0.5 bg-base-100/90 rounded-br rounded-tl-xl text-[9px] text-base-content/40 font-mono font-bold select-none z-20 border-b border-r border-base-200 backdrop-blur-sm">
                     #{node.tech_id}
                 </div>
 

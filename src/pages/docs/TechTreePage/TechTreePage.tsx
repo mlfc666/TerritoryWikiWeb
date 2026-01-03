@@ -97,7 +97,7 @@ export default function TechTreePage() {
                 <style>{`
                     div::-webkit-scrollbar { display: none; }
                 `}</style>
-s
+
                 {/* 内容区域：min-w-max 确保横向撑开，防止折行 */}
                 <div className="p-10 min-w-max min-h-max flex flex-col gap-12 pb-20">
                     {roots.map(root => (
