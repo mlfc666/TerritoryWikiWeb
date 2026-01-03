@@ -1,5 +1,6 @@
-import React from 'react';
+
 import { CubeIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import {useTranslation} from "react-i18next";
 
 interface FileCardProps {
     href: string;
@@ -8,7 +9,7 @@ interface FileCardProps {
 
 export const FileCard: React.FC<FileCardProps> = ({ href, fileName }) => {
     const isZip = href.endsWith('.zip');
-
+    const {t} = useTranslation()
     return (
         <a
             href={href}
@@ -29,7 +30,7 @@ export const FileCard: React.FC<FileCardProps> = ({ href, fileName }) => {
                     </h3>
                     <p className="text-xs text-base-content/60 mt-1 flex items-center gap-1">
                         <span className="badge badge-xs badge-ghost font-mono border-base-300">{isZip ? 'ZIP' : 'FILE'}</span>
-                        <span>• 点击下载</span>
+                        <span>{t("components.FileCard.download")}</span>
                     </p>
                 </div>
 

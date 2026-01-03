@@ -12,6 +12,9 @@
     "RemoteMarkdown": {
       "loading": "文档加载中...",
       "error": "文档加载失败"
+    },
+    "FileCard": {
+      "download": "• 点击下载"
     }
   },
   "sidebar": {
