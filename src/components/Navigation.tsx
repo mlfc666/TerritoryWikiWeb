@@ -1,13 +1,14 @@
 import React, {lazy} from 'react';
 import {AcademicCapIcon, AtSymbolIcon, BookOpenIcon, FireIcon, TrophyIcon} from "@heroicons/react/24/outline";
-import StuffPage from "../pages/docs/StuffPage/StuffPage.tsx";
-import FramePage from "../pages/mods/install/FramePage.tsx";
-import MarkdownTuitionPage from "../pages/MarkdownTuitionPage.tsx";
-import TechTreePage from "../pages/docs/TechTreePage/TechTreePage.tsx";
-
 const IntroPage = lazy(() => import('../pages/intro/intro'));
 const ShopPage = lazy(() => import('../pages/intro/shop'));
 const OtherPage = lazy(() => import('../pages/intro/other'));
+// 把全部页面转化为懒加载
+const StuffPage = lazy(() => import('../pages/docs/StuffPage/StuffPage.tsx'));
+const FramePage = lazy(() => import('../pages/mods/install/FramePage.tsx'));
+const MarkdownTuitionPage = lazy(() => import('../pages/MarkdownTuitionPage.tsx'));
+const TechTreePage = lazy(() => import('../pages/docs/TechTreePage/TechTreePage.tsx'));
+
 export type NavItem = {
     key: string;            // 这里的 key 将作为路径的一部分，也是翻译 key 的一部分
     path?: string;          // 可选：如果填了，就强制使用这个路径；不填则自动生成
